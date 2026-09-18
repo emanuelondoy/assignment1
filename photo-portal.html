@@ -67,6 +67,11 @@
 			console.log(photo_name);
 			// TODO: Requirement 3: Add check that the uploaded file is of type "image"
 			// hint: Look for photo.type: See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
+			// check for image file
+			if (photo.type.indexOf("image") !== 0) {
+				alert("File is not an image");
+				return
+			}
 
 			date_taken = document.getElementById("date_taken").value;
 			console.log(date_taken);
@@ -92,9 +97,23 @@
 				// 2.1 hint: Look at the following ways to convert string to number.
 				// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
 				// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-				
-                                // 2.2 Add check for year - should be 4 digits (hint: follow the regex pattern used above)
-                                // 2.3 Add check for day - should be 1 or 2 digits (hint: follow the regex pattern used above)
+				month_num = parseInt(month);
+				if (month_num < 1 || month_num > 12) {
+					alert("Month should be between 1 and 12.");
+					return;
+				}
+				// 2.2 Add check for year - should be 4 digits (hint: follow the regex pattern used above)
+				year_regex = /^\d{4}$/;
+				if (!year.match(year_regex)) {
+					alert("Year format should be four digits.");
+					return;
+				}
+				// 2.3 Add check for day - should be 1 or 2 digits (hint: follow the regex pattern used above)
+				day_regex = /^\d{1,2}$/;
+				if (!day.match(day_regex)) {
+					alert("Day format should be one or two digits.");
+					return;
+				}
 
 			}
 
@@ -576,8 +595,8 @@
 							<tbody><tr>
 								<td><label>Date taken</label></td>
 								<td><label>Tags</label></td>
-								<td><input type="text" name="date_taken" placeholder="MM/DD/YYYY" id="date_taken" min="01" max="12"></td>
-								<input class="input" type="tags"> <!--started step 1--> 
+								<td><input type="text" name="date_taken" placeholder="MM/DD/YYYY" id="date_taken"></td>
+								<td><input type="text" name="tags" placeholder="Enter tags separated by commas" id="tags"></td> <!--started step 1--> 
 							</tr>
 							<!-- TODO: Requirement 1: Add tags field  -->
 						</tbody></table>
