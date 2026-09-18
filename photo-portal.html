@@ -102,19 +102,19 @@
 				// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 				month_num = parseInt(month);
 				if (month_num < 1 || month_num > 12) {
-					alert("Month should be between 1 and 12.");
+					alert("The month field should be between 01 and 12.");
 					return;
 				}
 				// 2.2 Add check for year - should be 4 digits (hint: follow the regex pattern used above)
 				year_regex = /^\d{4}$/;
 				if (!year.match(year_regex)) {
-					alert("Year format should be four digits.");
+					alert("The year field should be 4 digits.");
 					return;
 				}
 				// 2.3 Add check for day - should be 1 or 2 digits (hint: follow the regex pattern used above)
 				day_regex = /^\d{1,2}$/;
 				if (!day.match(day_regex)) {
-					alert("Day format should be one or two digits.");
+					alert("The day field should be 1 or 2 digits.");
 					return;
 				}
 
@@ -125,14 +125,13 @@
 			console.log("Tags:" + tags_val);
 
 			// TODO: Requirement 7: Save the date_taken and tags in photos_metadata dictionary with key as photo_name.
+			photos_metadata[photo_name] = {date_taken: date_taken, tags: tags_val};
 
 			// TODO: Requirements 6.1, 6.2: Change the labels to anchor elements with photo name as the anchor text
 			photo_details = document.createElement("li");
 			photo_details.setAttribute("id", photo_name + "-li");
-			photo_anchor = document.createElement("anchor");
+			photo_anchor = document.createElement("a");
 			photo_anchor.setAttribute("onclick", "show_photo('" + photo_name + "')");
-			photo_anchor.textContent = photo_name;
-			photo_details.appendChild(photo_anchor);
 			photo_anchor.textContent = photo_name;
 			photo_details.appendChild(photo_anchor);
 			document.getElementById("photo_list").appendChild(photo_details);
@@ -580,10 +579,12 @@
 					<button name="Search" style="margin-left:10px;" onclick="search_photos()">Search</button>
 				</div>
 
+				<hr>
+
 				<div class="row"> <!-- row2 -->
 					<div>
-						<ol id="photo_list">
-						</ol>
+						<ul id="photo_list">
+						</ul>
 					</div>
 				</div> <!-- row2 -->
 			</div>
