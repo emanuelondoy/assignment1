@@ -54,6 +54,9 @@
 		var photos_metadata = {}; 
 
 		// TODO: Requirement 5: Add search function with alert
+		function search_photos() {
+			alert("TODO");
+		}
 
 		function store_photo() {
 			let photo = document.getElementById("photo_name").files[0];
@@ -566,7 +569,10 @@
 				<hr>
 
 				<!-- TODO: Requirement 5: Add Search photos inputs -->
-				<div class="row">
+				<div class="row" id="searchPhotos">
+					<label style="padding-left:10px;">Search (with tags)</label>
+					<input type="text" name="search_tags" style="margin-left:10px;">
+					<button name="Search" style="margin-left:10px;" onclick="search_photos()">Search</button>
 				</div>
 
 				<div class="row"> <!-- row2 -->
