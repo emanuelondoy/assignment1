@@ -1,0 +1,12 @@
+- AI tool used: Gemini 3.1 Pro
+- Debugging prompts/questions (no need to submit responses)
+I copy+pasted these errors in the prompt to see what the issue was 
+Access to CSS stylesheet at 'file:///C:/assignment1/photo-portal_files/bootstrap.min.css' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.
+bootstrap.min.css:1  Failed to load resource: net::ERR_FAILED
+photo-portal.html:1 Access to script at 'file:///C:/assignment1/photo-portal_files/jquery-3.4.1.slim.min.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.
+jquery-3.4.1.slim.min.js:1  Failed to load resource: net::ERR_FAILED
+photo-portal.html:43 Access to script at 'file:///C:/assignment1/photo-portal_files/popper.min.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.
+popper.min.js:1  Failed to load resource: net::ERR_FAILED
+photo-portal.html:43 Access to script at 'file:///C:/assignment1/photo-portal_files/bootstrap.min.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.
+bootstrap.min.js:1  Failed to load resource: net::ERR_FAILED
+photo-portal.html:1 Unsafe attempt to load URL file:///C:/assignment1/photo-portal.html from frame with URL file:///C:/assignment1/photo-portal.html. 'file:' URLs are treated as unique security origins.
