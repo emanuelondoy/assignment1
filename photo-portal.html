@@ -129,10 +129,12 @@
 			// TODO: Requirements 6.1, 6.2: Change the labels to anchor elements with photo name as the anchor text
 			photo_details = document.createElement("li");
 			photo_details.setAttribute("id", photo_name + "-li");
-			photo_label = document.createElement("label");
-			photo_label.setAttribute("onclick", "show_photo('" + photo_name + "')");
-			photo_label.textContent = photo_name;
-			photo_details.appendChild(photo_label);
+			photo_anchor = document.createElement("anchor");
+			photo_anchor.setAttribute("onclick", "show_photo('" + photo_name + "')");
+			photo_anchor.textContent = photo_name;
+			photo_details.appendChild(photo_anchor);
+			photo_anchor.textContent = photo_name;
+			photo_details.appendChild(photo_anchor);
 			document.getElementById("photo_list").appendChild(photo_details);
 
 			// Add thumbnail
@@ -164,7 +166,8 @@
 			// Requirement 6.3: Reset values of the input fields;
                         document.getElementById("photo_name").value = "";
 			// Add similar for date_taken and tags.
-
+						document.getElementById("date_taken").value = "";
+						document.getElementById("tags").value = "";
 		}
 
 		// TODO: Requirement 7: Show photo details
