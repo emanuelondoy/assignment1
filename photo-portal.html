@@ -174,8 +174,8 @@
 		function show_photo(photo_name) {
 			// Assignment1 TODO: Add date_taken, tags to the alert.
 			// hint: use the photo_name to dereference photos_metadata dictionary to find the date and tags
-
-			alert("Photo:" + photo_name + " TODO: Add date, tags");
+			var meta = photos_metadata[photo_name];
+			alert("Photo:" + photo_name + " Date Taken: " + meta.date_taken + " Tags: " + meta.tags);
 		}
 
 		function preview_photo(thumbnail_img_id) {
